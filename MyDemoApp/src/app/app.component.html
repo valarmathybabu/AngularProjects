@@ -1,0 +1,20 @@
+<div style="text-align: center;">
+
+  <img src="/assets/logo.png" alt="" class="logo">
+<h1 class="app-title">My Task App</h1>
+
+</div>
+<div class="container" >
+  <input type="text" placeholder="Type your text here" [(ngModel)]="taskvalue" name="taskvalue" (keyup.enter)="addItem()"
+  class="input-text">
+  <button class="add-btn" (click)="addItem()" >Add Task</button>
+
+<div class="list" >
+ <ul>
+   <li *ngFor="let item of tasklist">
+     <input type="checkbox" [(ngModel)]="item.isDone" name="isDone">
+     {{item.taskvalue}}
+     <button (click)="deleteItem(item.id)" class="btn">Delete</button>
+   </li>
+ </ul>
+</div>
